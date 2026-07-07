@@ -1,6 +1,9 @@
 name: some-reusable-workflow
 on:
   workflow_call: 
+    secrets:
+      TEST_SECRET:
+        required: true
 
 jobs:
   job1:
