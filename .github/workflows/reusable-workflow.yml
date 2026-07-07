@@ -1,12 +1,24 @@
 name: some-reusable-workflow
 on:
   workflow_call: 
+    inputs:
+      run_job1:
+        description: "Run Job 1"
+        required: false
+        default: true
+        type: boolean
+      run_job2:
+        description: "Run Job 2"
+        required: false
+        default: true
+        type: boolean
     secrets:
       TEST_SECRET:
         required: true
 
 jobs:
   job1:
+    if: ${{ inputs.run_job1 }}
     name: JOB 1
     runs-on: ubuntu-latest
     steps:
