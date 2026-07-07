@@ -1,0 +1,11 @@
+name: some-reusable-workflow
+on:
+  workflow_call: 
+
+jobs:
+  job1:
+    name: JOB 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "Hello, world"
